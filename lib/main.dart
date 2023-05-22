@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ticketbooking_app/screens/bottom_bar.dart';
+import 'package:ticketbooking_app/screens/spalsh_page.dart';
 import 'package:ticketbooking_app/utils/app_style.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primaryColor: primary),
       debugShowCheckedModeBanner: false,
-      home: BottomBar(),
+      home: SpalshPage(),
     );
   }
 }

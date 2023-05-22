@@ -1,11 +1,13 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, avoid_print
 
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:gap/gap.dart';
+import 'package:ticketbooking_app/screens/hotel_screen.dart';
 import 'package:ticketbooking_app/screens/ticket_view.dart';
+import 'package:ticketbooking_app/utils/app_info.dart';
 import 'package:ticketbooking_app/utils/app_style.dart';
 
 class HomePage extends StatefulWidget {
@@ -47,8 +49,9 @@ class _HomePageState extends State<HomePage> {
                     width: 50,
                     height: 50,
                     decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage('assets/image/aeroplane.png')),
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.black,
                     ),
                   )
                 ],
@@ -98,7 +101,49 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         const Gap(15),
-        TicketView()
+        SingleChildScrollView(
+          padding: EdgeInsets.only(right: 20),
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: ticketList
+                .map((singleTicket) => TicketView(ticket: singleTicket))
+                .toList(),
+          ),
+        ),
+        const Gap(15),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Hotel",
+                style: Styles.headLineStyle2,
+              ),
+              InkWell(
+                onTap: () {
+                  print('Tapped');
+                },
+                child: Text(
+                  "View All",
+                  style: Styles.textStyle.copyWith(
+                    color: Styles.primaryColor,
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+        const Gap(15),
+        SingleChildScrollView(
+          padding: EdgeInsets.only(left: 20),
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: hotelList
+                .map((singleHotel) => HotelCard(hotel: singleHotel))
+                .toList(),
+          ),
+        )
       ]),
     );
   }
