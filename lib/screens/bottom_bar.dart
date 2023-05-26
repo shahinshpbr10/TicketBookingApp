@@ -6,6 +6,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:ticketbooking_app/screens/home_screen.dart';
 import 'package:ticketbooking_app/screens/search_screen.dart';
+import 'package:ticketbooking_app/screens/ticket_screen.dart';
 import 'package:ticketbooking_app/utils/app_style.dart';
 
 class BottomBar extends StatefulWidget {
@@ -20,7 +21,7 @@ class _BottomBarState extends State<BottomBar> {
   static final List<Widget> _widgetOption = <Widget>[
     const HomePage(),
     const SearchScreen(),
-    const Text("Tickets"),
+    const TicketScreen(),
     const Text("profile")
   ];
   void onItemTapped(int index) {

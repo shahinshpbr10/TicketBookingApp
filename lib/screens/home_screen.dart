@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> {
                 .toList(),
           ),
         ),
-        const Gap(15),
+        
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Row(
