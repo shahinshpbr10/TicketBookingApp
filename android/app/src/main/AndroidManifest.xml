@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ticketbooking_app">
+    package="com.streak.ticketbooking_app">
    <application
-        android:label="ticketbooking_app"
+        android:label="My Flight"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
